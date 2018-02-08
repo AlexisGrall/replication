@@ -1,5 +1,6 @@
 import urllib2
-response = urllib2.urlopen('https://planning.univ-lorraine.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?resources=94695&projectId=5&calType=ical&nbWeeks=16')
-html = response.read()
+DEFAULT_URL = 'https://planning.univ-lorraine.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?resources=94695&projectId=5&calType=ical&irstDate=2018-02-05&lastDate=2018-02-11'
 
-print("%s", html)
+def getFromUrl(url=DEFAULT_URL):
+    response = urllib2.urlopen(url)
+    return response
